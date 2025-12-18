@@ -3,6 +3,9 @@
 A full-stack **Todo Application** built with **Node.js, Express, MongoDB, and a modern animated frontend UI**, fully **Dockerized** and following a **Git feature-branch workflow**.
 
 This project was developed as part of an academic assignment with strict requirements on Git usage, Docker, and clean project structure.
+## 📸 todo list
+
+![design](docs/ui.png)
 
 ---
 
