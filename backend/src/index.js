@@ -1,11 +1,22 @@
-const http = require("http");
+const cors = require("cors");
+const express = require("express");
+const connectDB = require("./config/db");
 
-const server = http.createServer((req, res) => {
-  console.log("REQUEST RECEIVED");
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("RAW NODE SERVER WORKS");
+const app = express();
+const PORT = 5000;
+
+// اتصال به دیتابیس
+connectDB();
+app.use(cors());
+app.use(express.json());
+const todoRoutes = require("./routes/todoRoutes");
+
+app.use("/api/todos", todoRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Todo API is running 🚀");
 });
 
-server.listen(5001, () => {
-  console.log("RAW SERVER LISTENING ON 5000");
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo list</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light">
+  <div class="glass">
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="avatar">✓</div>
+        <h3>Todo App</h3>
+      </div>
+      <div class="menu">
+        <button onclick="filter('all')">All Tasks</button>
+        <button onclick="filter('done')">Completed</button>
+        <button onclick="filter('todo')">Pending</button>
+        <button onclick="toggleTheme()">🌙 / ☀️</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <h1>My Todo List</h1>
+
+      <div class="progress-box">
+        <div class="progress-info">
+          <span>Progress</span>
+          <span id="percent">0%</span>
+        </div>
+        <div class="progress">
+          <div class="bar" id="bar"></div>
+        </div>
+      </div>
+
+      <div class="add">
+        <input id="input" placeholder="Add a new task..." />
+        <button id="addBtn">+</button>
+      </div>
+
+      <div id="list"></div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
